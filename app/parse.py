@@ -1,10 +1,11 @@
+import time
+import csv
+from multiprocessing import Pool
 from dataclasses import dataclass, fields
-
 from urllib.parse import urljoin
-
 from bs4 import BeautifulSoup
-
 from selenium import webdriver
+from tqdm import tqdm
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
@@ -13,13 +14,6 @@ from selenium.common.exceptions import (
     ElementNotInteractableException,
 )
 
-import time
-
-import csv
-
-from tqdm import tqdm
-
-from multiprocessing import Pool
 
 BASE_URL = "https://webscraper.io/"
 
